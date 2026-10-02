@@ -1,0 +1,130 @@
+:root {
+  --bg: #0f172a;
+  --panel: #111827;
+  --button: #1f2937;
+  --button-hover: #374151;
+  --operator: #f59e0b;
+  --operator-hover: #fbbf24;
+  --secondary: #334155;
+  --text: #f8fafc;
+  --muted: #cbd5e1;
+  --shadow: rgba(15, 23, 42, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #020817, #111827 40%, #1e293b);
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+}
+
+.calculator {
+  width: min(92vw, 390px);
+  background: rgba(17, 24, 39, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: 0 24px 50px var(--shadow);
+}
+
+.display-panel {
+  background: rgba(15, 23, 42, 0.95);
+  border-radius: 18px;
+  padding: 18px 16px;
+  text-align: right;
+  margin-bottom: 18px;
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.expression {
+  font-size: 1rem;
+  color: var(--muted);
+  overflow-x: auto;
+  white-space: nowrap;
+  min-height: 24px;
+}
+
+.result {
+  font-size: clamp(2rem, 6vw, 2.6rem);
+  font-weight: 700;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.btn {
+  border: none;
+  border-radius: 16px;
+  min-height: 62px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  background: var(--button);
+  color: var(--text);
+  transition: transform 0.12s ease, background 0.12s ease;
+}
+
+.btn:hover {
+  background: var(--button-hover);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.operator {
+  background: var(--operator);
+  color: #111827;
+  font-weight: 700;
+}
+
+.operator:hover {
+  background: var(--operator-hover);
+}
+
+.secondary {
+  background: var(--secondary);
+}
+
+.secondary:hover {
+  background: #475569;
+}
+
+.equal {
+  background: #10b981;
+  color: #062b1f;
+  font-weight: 700;
+}
+
+.equal:hover {
+  background: #34d399;
+}
+
+.wide {
+  grid-column: span 2;
+}
+
+@media (max-width: 420px) {
+  .calculator {
+    padding: 14px;
+  }
+
+  .btn {
+    min-height: 58px;
+    font-size: 1.1rem;
+  }
+}
